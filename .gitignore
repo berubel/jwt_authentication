@@ -1,0 +1,4 @@
+env/
+app/migrations/
+app/__pycache__
+django_project/__pycache__
