@@ -8,4 +8,7 @@ urlpatterns = [
     path('login/submit', views.submit_login),
     path('logout/', views.user_logout),
     path('home/', views.home),
+    path('jwt_login/', views.jwt_user_login),
+    path('jwt_user/', views.jwt_user_view),
+    path('jwt_logout/', views.jwt_user_logout),
 ]
