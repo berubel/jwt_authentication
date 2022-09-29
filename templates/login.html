@@ -1,24 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <div>
     <head>
-        <meta charset="UTF-8">
-        <title>Home</title>
+      <meta charset="UTF-8" />
+      <title>Home</title>
     </head>
-    <body>
-        <h1>Login</h1>
-        <form action="submit" method="POST"> {% csrf_token %}
-            <div align="center">
-                <label>User:</label>
-                <input type="text" name="username">
-                <label>Password:</label>
-                <input type="password" name="password">
-                <button type="submit">Login</button>
-            </div>
-        </form>
-        {% for message in messages %}
-        <div align="center">
-            <strong>Error!</strong> {{ message }}
+      <div class="login-page">
+      <body>
+        <div class="form">
+          <form class="login_form" action="submit" method="POST">
+            {% csrf_token %}
+            <h1 class="text">LOG IN</h1>
+            <input placeholder="Username" type="text" name="username" />
+            <input placeholder="Password" type="password" name="password" />
+            <button type="submit">Login</button>
+          </form>
+          {% for message in messages %}
+          <div align="center"><strong>Error!</strong> {{ message }}</div>
+          {% endfor %}
         </div>
-        {% endfor %}
-    </body>
+      </body>
+    </div>
+  </div>
 </html>
+
+
+<!-- Style sheet -->
+
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  position: absolute;
+  background-color: rgba(255,255,255,.9);
+  width: 100%;
+  height: 99%;
+  right: 0px;
+}
+.form {
+  top: 250px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  background: -webkit-linear-gradient(top,#7579ff 2%,#b224ef);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.text{
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 0;
+  border-radius: 5px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ffff;
+  width: 60%;
+  border: 0;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 50px;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: -webkit-linear-gradient(top,#7579ff,#b224ef);
+}
+
+body {
+  background-image: url(https://colorlib.com/etc/lf/Login_v3/images/bg-01.jpg);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
